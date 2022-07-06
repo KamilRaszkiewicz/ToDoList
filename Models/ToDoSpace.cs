@@ -7,8 +7,9 @@ namespace ToDoList.Models
         [Key]
         public int SpaceId { get; set; }
         public string Name { get; set; }
-        public List<ContainerBase> Containers { get; set; }
+        public virtual List<ContainerBase> Containers { get; set; }
 
-        public User User { get; set; }
+        [System.Text.Json.Serialization.JsonIgnore]
+        public virtual User User { get; set; }
     }
 }

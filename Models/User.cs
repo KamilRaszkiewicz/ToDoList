@@ -7,6 +7,6 @@ namespace ToDoList.Models
         public int UserId { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
-        public List<ToDoSpace> ToDoSapces { get; set; }
+        public virtual List<ToDoSpace> ToDoSpaces { get; set; }
     }
 }
