@@ -1,14 +1,17 @@
 
+using Microsoft.Extensions.FileProviders;
+using ToDoList.Utils;
+
 var builder = WebApplication.CreateBuilder(args);
 
 
 //services are registered in this method to keep program.cs clear
-ToDoList.ServicesManager.RegisterServies(builder);
+ServicesManager.RegisterServies(builder);
 
 var app = builder.Build();
 
 //some startup procedures (seeding data or sth) gonna be executed in this method
-ToDoList.ServicesManager.Startup(app);
+ServicesManager.Startup(app);
 
 
 
@@ -16,8 +19,17 @@ ToDoList.ServicesManager.Startup(app);
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
-    app.UseSwaggerUI();
+    app.UseSwaggerUI( c =>
+         c.InjectStylesheet("SwaggerDark.css")
+        );
 }
+
+app.UseStaticFiles(new StaticFileOptions
+{
+    FileProvider = new PhysicalFileProvider(
+           Path.Combine(builder.Environment.ContentRootPath, "wwwroot")),
+    RequestPath = ""
+});
 
 app.UseHttpsRedirection();
 

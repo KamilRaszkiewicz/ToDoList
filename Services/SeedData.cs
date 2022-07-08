@@ -17,7 +17,7 @@ namespace ToDoList.Services
                 {
                     Name = "Walter",
                     Email = "walt@white.com",
-                    ToDoSapces = new List<ToDoSpace>
+                    ToDoSpaces = new List<ToDoSpace>
                     {
                         new ToDoSpace
                         {
@@ -60,7 +60,7 @@ namespace ToDoList.Services
                 {
                     Name = "Gregory",
                     Email = "myemail123@example.com",
-                    ToDoSapces = new List<ToDoSpace>
+                    ToDoSpaces = new List<ToDoSpace>
                     {
                         new ToDoSpace
                         {

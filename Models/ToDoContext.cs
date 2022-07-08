@@ -22,6 +22,7 @@ namespace ToDoList.Models
                     q => JsonSerializer.Deserialize<List<CheckedListElement>>(q, (JsonSerializerOptions)default));
             modelBuilder.Entity<Note>().HasDiscriminator();
         } 
+
     }
         
 }

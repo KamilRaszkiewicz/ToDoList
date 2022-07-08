@@ -2,7 +2,7 @@
 using ToDoList.Models;
 using ToDoList.Services;
 
-namespace ToDoList
+namespace ToDoList.Utils
 {
     public static class ServicesManager
     {
@@ -25,8 +25,8 @@ namespace ToDoList
 
         public static void Startup(WebApplication app)
         {
-            
-            using(var scope = app.Services.CreateScope())
+
+            using (var scope = app.Services.CreateScope())
             {
                 SeedData.Seed(scope.ServiceProvider);
             }
